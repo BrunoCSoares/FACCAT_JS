@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=7">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="author" content="Bruno Carlos Soares">
+        <meta name="description" content="Criação de site exemplo usando JavaScript e Capivaras">
+        <title>Capivara</title>
+        <link rel="stylesheet" href="css/style.css">
+        <!--<link rel="shortcut icon" href="" type="image/x-icon">-->
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+
+            #botoes {
+                margin-top: 30px;
+                display: flex;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+
+            #botoes button {
+                font-size: 20px;
+                margin: 0 10px;
+                background-color: rgb(106, 106, 141);
+                padding: 5px;
+                border: none;
+                border-radius: 10px;
+            }
+
+            #conteudo {
+                display: flex;
+                align-items: center;
+            }
+
+            #conteudo img {
+                margin-right: 20px;
+            }
+
+            #monstro {
+                font-family: sans-serif;
+                font-size: 40px;
+                color: red;
+                font-weight: 700;
+            }
+            .saida a{
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="botoes">
+            <button type="button" onclick="mostrarParagrafo(); trocarImagem('https://cptstatic.s3.amazonaws.com/imagens/enviadas/materias/materia11587/criacao-de-capivara-instalacoes-necessarias-para-o-sistema-semi-intensivo-de-manejo-cpt.jpg')">capivara</button>
+            <button type="button" onclick="mostrarParagrafo(); trocarImagem('https://i.pinimg.com/236x/b7/12/37/b71237fb5e98f864b90f8dea3c549266.jpg')">dê oi para a capivara</button>
+            <button type="button" onclick="mostrarParagrafo(); trocarImagem('https://cdn6.campograndenews.com.br/uploads/noticias/2020/03/10/16v9rd06pl72u.jpg')">coloque a capivara no armário</button>
+        </div>
+
+        <div id="conteudo">
+            <img id="demo" src="https://cptstatic.s3.amazonaws.com/imagens/enviadas/materias/materia11587/criacao-de-capivara-instalacoes-necessarias-para-o-sistema-semi-intensivo-de-manejo-cpt.jpg" alt="capi, capivara" width="auto" height="500px">
+            <p id="monstro" style="display: none;">Seu monstro</p>
+        </div>
+        <div class="saida">
+            <a href="index.html"><p id="texto">Voltar</p></a>
+        </div>
+        <script>
+            function mostrarParagrafo() {
+                document.getElementById('monstro').style.display = 'block';
+            }
+
+            function ocultarParagrafo() {
+                document.getElementById('monstro').style.display = 'none';
+            }
+
+            function trocarImagem(url) {
+                var imagem = document.getElementById('demo');
+                if (url !== 'https://cdn6.campograndenews.com.br/uploads/noticias/2020/03/10/16v9rd06pl72u.jpg') {
+                    ocultarParagrafo();
+                }
+                imagem.src = url;
+            }
+        </script>
+    </body>
+</html>
